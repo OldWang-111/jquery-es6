@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* document.onclick = function () {
+                let promies = new Promise((resovle, reject) => {
+                    console.log("同步回调");
+                    setTimeout(function () {
+                        resovle("123");
+                        // reject();
+                        // console.log(promies);//fulfilled  123
+                        // console.log("异步代码");
+                        console.log(promies); //rejected
+                        // console.log(promies);//fulfilled  123
+                    }, 2000);
+                });
+                promies.then(
+                    (value) => {
+                        console.log("c", value);
+                        return new Promise((resovle, reject) => {
+                            resovle("2.123");
+                        });
+                    },
+                    (value) => {
+                        console.log("false", value);
+                        return new Promise((resovle, reject) => {
+                            reject("2.234");
+                        });
+                    }
+                );
+            }; */
+
+            let async = (fn = () => {
+                console.log("1")
+                await 
+            });
+        </script>
+    </body>
+</html>

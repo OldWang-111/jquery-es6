@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <ul id="box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <script>
+            /*
+                json对象使用
+                JSON.stringify将js对象转成字符串
+                JSON.parse
+            */
+            /* var arr = [{ name: "laowang", age: 18 }, { name: "laoli" }];
+                var newJson = JSON.stringify(arr);
+                console.log(newJson);
+                console.log(JSON.parse(newJson));  */
+
+            let arr = [1, 2, 3, 4, 5, 6, 4, 3, 2, 7, 2, 1, 35, 4];
+            /* console.log(
+                arr.findIndex(function (a) {
+                    return a > 6;
+                })
+            ); */
+            /* var box = document.getElementById("box");
+            var lis = box.getElementsByTagName("li"); */
+            /* console.log(lis);
+            console.log(Array.from(lis));
+            console.log(Array); */
+            /* console.log(arr.includes(4));
+            console.log(arr.includes(234)); */
+
+            /* console.log(
+                arr.includes(function (item) {
+                    item > 6;
+                })
+            ); */
+            /* var re = [...new Set(arr)];
+            console.log(re); */
+
+            // var re = [...new Set("ajsdgajdhiaushdas")].join("");
+
+            // console.log(re);
+
+            /* class Parent {
+                //相当写在构造函数中的
+                constructor(name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+                //在这写相当写在原型对象中
+                //只有实例化对象可以使用 构造函数自己不能使用
+                ooo() {
+                    console.log("12");
+                }
+            }
+
+            // console.log(re.ooo);
+            // console.log(Parent.__proto__); //Function
+
+            class Student extends Parent {
+                constructor(name, age) {
+                    super();
+                    console.log("abc");
+                }
+                fff() {
+                    console.log("fff");
+                }
+            }
+            var re = new Student("老王", 22);
+            console.log(re.fff()); */
+
+            /*  let Person = function (name, age) {
+                this.name = name;
+                this.agee = age;
+                fn = function () {
+                    console.log("123");
+                };
+            };
+            Person.prototype.fo = function () {
+                console.log("456");
+            };
+            var err = new Person();
+            console.log(err.fo()); */
+
+            /* class Person {
+                constructor(name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+                //写在原型
+                fo() {
+                    console.log("123");
+                }
+            }
+
+            class Student extends Person {
+                constructor(name, age) {
+                    super(name, age);//传入实参
+                }
+            }
+            var re = new Student("laowang", 19);
+            console.log(re); */
+
+            //new 啥就是啥
+
+            function Person(name, age) {
+                this.name = name;
+                this.age = age;
+                fo = function () {
+                    console.log(123);
+                };
+            }
+            //继承Person的公有属性
+            function Student(name, age) {
+                Person.call(this, name, age);
+            }
+            //给Student添加自己的属性
+            Student.prototype.foo = function () {
+                console.log("bbb");
+            };
+            //将Student的原型链修改
+            Student.__proto__ = Person.prototype;
+            var Stu1 = new Student("小王", 19);
+            var Stu2 = new Student("大王", 29);
+            var Stu3 = new Student("小李", 27);
+            var Stu4 = new Student("老李", 39);
+            console.log(Stu1);
+            console.log(Stu2);
+            console.log(Stu3);
+            console.log(Stu4);
+
+            //创建一个名字为狗的类
+            function Gou(name, age) {
+                //继承person 的属性
+                Person.call(this, name, age);
+            }
+            //添加属于自己的方法
+            Gou.prototype.eat = function () {
+                console.log("狗会吃屎");
+            };
+            //改变原型链
+            Gou.__proto__ = Person.prototype;
+            var G1 = new Gou("大黄", 3);
+            var G2 = new Gou("二哈", 5);
+            var G3 = new Gou("泰迪", 4);
+            console.log(G1.eat() === G2.eat());
+            G2.eat();
+            G3.eat();
+            console.log(G1);
+            console.log(G2);
+            console.log(G3);
+        </script>
+    </body>
+</html>

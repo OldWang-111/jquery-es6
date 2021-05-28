@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script>
+            /*
+               模板字符串
+               ``包含可以天写标签 变量表达式用${}包含
+            */
+
+            /*  let a = 3;
+               let b = 10;
+               let c = function () {
+                   return a * b;
+               };
+               let d = 0;
+
+               str = `
+               <div>
+                   <h1>标题</h1>
+                       <p>${a}</p>
+                       <p>${b}</p>
+                       <p>${c()}</p>
+                       <p>${a > b ? (d = 10) : (d = 20)}</p>
+               </div>
+
+            `;
+               let oBox = (document.getElementById("box").innerHTML = str); */
+
+            /* let a = {
+                   c: 100,
+                   d: 200,
+                   asc: function () {
+                       return c * d;
+                   },
+               };
+               let { asc, d, c } = a;
+               console.log(c, d, asc()); */
+
+            /* let t = [1, 2, 3, 4, 5];
+            // let [a, b, c, d, e] = t;
+            let [a, b, c, d, e, f] = t;
+            console.log(a, b, c, d, e, f); */
+
+            /* let r = ["a", "w", "a", "sd", "wasd", "a", "d", "ad", "as"];
+            //数组中的字母每一个相当于声明了一个变量,对应了r的顺序依次赋值
+            let [a, b, d, c, e, s] = r;
+            console.log(a, d, b, c, e, s); */
+
+            /* let y = {
+                a: 123,
+                b: [1, 2, 3, 4],
+                c: function () {
+                    return a ** 3;
+                },
+            };
+            let { a, b, c } = y;
+            console.log(a, b, c()); */
+
+            /* let str = "    ada sda a sd     ";
+            var re= str.trim();
+            var zz=/$a/gi
+            console.log(re); */
+
+            /* let fn = function () {
+                console.log(this); //window
+                console.log(arguments); //[1,2,3,4]
+            };
+            fn(1, 2, 3, 4); */
+
+            /* let fn2 = () => {
+                console.log(this);
+                console.log(arguments);
+            };
+            fn2(1,2,3) */
+            /* document.documentElement.onclick = function () {
+                console.log(this);
+                setTimeout(() => {
+                    console.log(this);
+                }, 500);
+            }; */
+            /* document.documentElement.onclick = function () {
+                console.log(this);
+                setTimeout(() => {
+                    console.log(this);
+                }, 100);
+            }; */
+            let Perent = function (name, age) {
+                this.name = name;
+                this.age = age;
+            };
+            Perent.prototype.say = function () {
+                console.log("我是" + this.name, "今年" + this.age + "岁");
+            };
+            
+            const Student = new Perent("lh", 18).say();
+            // Student.say();
+        </script>
+    </body>
+</html>

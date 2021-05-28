@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script>
+            arr = [1, 2, 3, 4, 5, 6, 2, 2];
+            /* function indexOf(arr, item) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr.shift() === item) {
+                        return i;
+                        // console.log(i);
+                    }
+                }
+                return -1;
+            }
+            var re = indexOf(arr, 3);
+            console.log(re); */
+            /* function abc(arr, item) {
+                console.log(arr);
+                var _item = item;
+               var re= arr.filter(function (item, index) {
+                    return item !== _item;
+                    // console.log(2);
+                });
+                return re
+            } */
+
+            function removeWithoutCopy(arr, item) {
+                var _item = item;
+                arr.forEach(function (item, index) {
+                    if (item === _item) {
+                        arr.splice(index, 1);
+                    }
+                });
+            }
+
+            removeWithoutCopy(arr, 2);
+            console.log(arr);
+        </script>
+    </body>
+</html>
